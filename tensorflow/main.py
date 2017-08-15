@@ -18,10 +18,10 @@ BATCH_SIZE = 2
 N_EPOCHS = 2000
 PADDING_ID = -1
 
-# replace your train data
+# replace this with your train data
 train_X, e_w2i, e_i2w = load_data('../data/train_input.txt', target=False)
 train_y, d_w2i, d_i2w = load_data('../data/train_output.txt', target=True)
-# replace your valid data
+# replace this with your valid data
 valid_X = train_X[:]
 valid_y = train_y[:]
 
