@@ -6,3 +6,6 @@ Go to the tensorflow directory and run
 ```
 python main.py
 ```
+
+## Reference
+- Deep Recurrent Generative Decoder for Abstractive Text Summarization: https://arxiv.org/abs/1708.00625
