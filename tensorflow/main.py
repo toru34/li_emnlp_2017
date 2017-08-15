@@ -1,13 +1,9 @@
-import os
-import sys
-
 import numpy as np
 import tensorflow as tf
 from keras.preprocessing.sequence import pad_sequences
-from sklearn.model_selection import train_test_split
 
 from utils import load_data, f_props, tf_log
-from layers import Embedding, Dense3d, get_W, get_b, GRU, RVAE, Attention
+from layers import Embedding, Dense3d, GRU, RVAE, Attention
 
 random_state = 42
 
