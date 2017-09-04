@@ -1,12 +1,18 @@
 # toru34
 *.ipynb
 .DS_Store
+*.swp
+dynet
 data/train.article.txt
+data/train.article_2k.txt
 data/train.article_20k.txt
 data/train.article_200k.txt
 data/train.title.txt
+data/train.title_2k.txt
 data/train.title_20k.txt
 data/train.title_200k.txt
+data/train.en
+data/train.ja
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
