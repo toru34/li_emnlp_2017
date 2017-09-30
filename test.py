@@ -102,5 +102,8 @@ def main():
     for pred in pred_y:
         pred_y_txt += ' '.join([i2w[com] for com in pred]) + '\n'
 
+    with open(OUTPUT_FILE, 'w') as f:
+        f.write(pred_y_txt)
+
 if __name__ == '__main__':
     main()
