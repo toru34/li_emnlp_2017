@@ -1,6 +1,6 @@
 import _dynet as dy
 
-from utils import dy_softplus
+from utils import dy_softplus, dy_log
 
 class BiGRU:
     def __init__(self, model, emb_dim, hid_dim):
@@ -96,7 +96,7 @@ class RecurrentGenerativeDecoder:
             z_t = mean_t + dy.cmult(dy.sqrt(var_t), eps)
 
             # KL divergence
-            KL_t = -0.5*dy.sum_elems(1 + dy.log(var_t) - dy.square(mean_t) - var_t)
+            KL_t = -0.5*dy.sum_elems(1 + dy_log(var_t) - dy.square(mean_t) - var_t)
 
             # decode
             hdy_t = dy.tanh(self.Wdyzh*z_t + self.Wdzhh*hd2_t + self.bdyh)
@@ -140,7 +140,7 @@ class RecurrentGenerativeDecoder:
                 z_tm1 = z_t
 
                 # KL divergence
-                KL_t = -0.5*dy.sum_elems(1 + dy.log(var_t) - dy.square(mean_t) - var_t)
+                KL_t = -0.5*dy.sum_elems(1 + dy_log(var_t) - dy.square(mean_t) - var_t)
                 KL.append(KL_t)
 
                 # decode
