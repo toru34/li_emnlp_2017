@@ -4,10 +4,10 @@ import numpy as np
 import _dynet as dy
 
 def dy_log(x):
-    return dy.log(x+1e-10)
+    return dy.log(x+1e-6)
 
 def dy_softplus(x):
-    return dy.log(dy.exp(x) + 1)
+    return dy_log(dy.exp(x) + 1)
 
 def associate_parameters(layers):
     for layer in layers:

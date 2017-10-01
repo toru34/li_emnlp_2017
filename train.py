@@ -120,7 +120,10 @@ def main():
 
             # Backward prop
             mb_loss.backward()
-            trainer.update()
+            try:
+                trainer.update()
+            except Exception as e:
+                print(e)
 
         # Valid
         loss_all_valid = []
