@@ -36,6 +36,7 @@ def main():
     N_TRAIN    = args.n_train
     N_VALID    = args.n_valid
     BATCH_SIZE = args.batch_size
+    VOCAB_SIZE = 60000
     EMB_DIM    = args.emb_dim
     HID_DIM    = args.hid_dim
     LAT_DIM    = args.lat_dim
@@ -58,7 +59,7 @@ def main():
     w2c = build_word2count(TRAIN_X_FILE, n_data=N_TRAIN)
     w2c = build_word2count(TRAIN_Y_FILE, w2c=w2c, n_data=N_TRAIN)
 
-    train_X, w2i, i2w = build_dataset(TRAIN_X_FILE, w2c=w2c, padid=False, eos=True, unksym='<unk>', target=False, n_data=N_TRAIN)
+    train_X, w2i, i2w = build_dataset(TRAIN_X_FILE, w2c=w2c, padid=False, eos=True, unksym='<unk>', target=False, n_data=N_TRAIN, vocab_size=VOCAB_SIZE)
     train_y, _, _     = build_dataset(TRAIN_Y_FILE, w2i=w2i, target=True, n_data=N_TRAIN)
 
     valid_X, _, _ = build_dataset(VALID_X_FILE, w2i=w2i, target=False, n_data=N_VALID)
@@ -66,6 +67,7 @@ def main():
 
     VOCAB_SIZE = len(w2i)
     OUT_DIM = VOCAB_SIZE
+    print(VOCAB_SIZE)
 
     # Build model ======================================================================================
     model = dy.Model()
