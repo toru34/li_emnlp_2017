@@ -29,7 +29,7 @@ sh download_data.sh
 
 #### Command example
 ```
-python train.py --num_epochs 10
+python train.py --n_epochs 10
 ```
 
 ### 4. Test
