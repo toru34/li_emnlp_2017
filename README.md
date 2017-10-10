@@ -59,6 +59,7 @@ The model is trained with a full training data in [3].
 ROUGE scores are obtained with `pythonrouge`.
 ##### 6.1. Gigaword (validation sets)
 My implementation used only 100 pairs (Original paper used all pairs in validation sets).
+
 |                 |ROUGE-1 (F1)|ROUGE-2 (F1)|ROUGE-L (F1)|
 |-----------------|:-----:|:-----:|:-----:|
 |Original paper [1]| 36.25|17.61|33.55|
