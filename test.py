@@ -6,7 +6,7 @@ import numpy as np
 import _dynet as dy
 from tqdm import tqdm
 
-from utils import build_dataset
+from utils import build_dataset, np_log
 
 RANDOM_STATE = 34
 
@@ -85,7 +85,7 @@ def main():
                     end_flag = False
                     y_tm1_emb = dy.lookup(V, y_tm1)
                     _q_t, hd1_t, hd2_t, z_t = decoder(y_tm1_emb, tm1s=[hd1_tm1, hd2_tm1, z_tm1], test=True)
-                    _q_t = np.log(_q_t.npvalue()) # Compute log probs
+                    _q_t = np_log(_q_t.npvalue()) # Compute log probs
                     q_t, y_t = np.sort(_q_t)[::-1][:K], np.argsort(_q_t)[::-1][:K] # Pick K highest log probs and their ids
                     score_t = score_tm1 + q_t # Accumlate log probs
                     tmp_candidates.extend(

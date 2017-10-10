@@ -3,6 +3,9 @@ from collections import defaultdict
 import numpy as np
 import _dynet as dy
 
+def np_log(x):
+    return np.log(np.clip(x, 1e-6, x))
+
 def dy_log(x):
     return dy.log(x+1e-6)
 
