@@ -10,7 +10,7 @@ Unofficial DyNet implementation of the paper Deep Recurrent Generative Decoder f
 - tqdm 4.15.0+
 
 ### 2. Prepare dataset
-To get preprocedded gigaword corpus[1], run
+To get preprocedded gigaword corpus[2], run
 ```
 sh download_data.sh
 ```
@@ -57,21 +57,20 @@ You can use pythonrouge[2] to measure the rouge scores.
 ### 6. Results
 The model is trained with a full training data in [3].
 ROUGE scores are obtained with `pythonrouge`.
-##### 6.1. Gigaword (validation sets)
+#### 6.1. Gigaword (validation sets)
 My implementation used only 100 pairs (Original paper used all pairs in validation sets).
 
 |                 |ROUGE-1 (F1)|ROUGE-2 (F1)|ROUGE-L (F1)|
 |-----------------|:-----:|:-----:|:-----:|
-|Original paper [1] (full validation data)| 36.25|17.61|33.55|
 |My implementation  (only 100 data)| 47.88| 22.58| 43.57|
 
-##### 6.2. DUC 2004
+#### 6.2. DUC 2004
 Work in progress.
 
-##### 6.3. LCSTS
+#### 6.3. LCSTS
 Work in progress.
 
-### 7. Pretained model
+### 7. Pretrained model
 To get the pretrained model, run
 ```
 sh download_pretrained_model.sh
@@ -85,7 +84,7 @@ python train.py --n_epochs 10 --gpu 0 --alloc_mem 5200 --n_valid 1000 --vocab_si
 and stopped after epoch 8th, and I choose the model after the epoch 5th as the best one since it showed the lowest validation loss.
 
 ### Notes
-- ROUGE scores are very high compared to the original report, but I don't know why. Please tell me if you know why!
+<!-- - ROUGE scores are very high compared to the original report, but I don't know why. Please tell me if you know why! -->
 - Original paper lacks some details and notations, and some points do not make sense, so this implementation may be different from the original one.
 - Tensorflow implementation is in the directory `./tensorflow`, but not maintained.
 
