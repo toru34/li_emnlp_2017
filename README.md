@@ -62,8 +62,8 @@ My implementation used only 100 pairs (Original paper used all pairs in validati
 
 |                 |ROUGE-1 (F1)|ROUGE-2 (F1)|ROUGE-L (F1)|
 |-----------------|:-----:|:-----:|:-----:|
-|Original paper [1]| 36.25|17.61|33.55|
-|My implementation| 47.88| 22.58| 43.57|
+|Original paper [1] (full validation data)| 36.25|17.61|33.55|
+|My implementation  (only 100 data)| 47.88| 22.58| 43.57|
 
 ##### 6.2. DUC 2004
 Work in progress.
