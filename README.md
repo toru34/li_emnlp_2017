@@ -78,7 +78,7 @@ sh download_pretrained_model.sh
 ```
 .
 
-This model is trained with
+This model was trained with
 ```
 python train.py --n_epochs 10 --gpu 0 --alloc_mem 5200 --n_valid 1000 --vocab_size 60000
 ```
