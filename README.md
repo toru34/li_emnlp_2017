@@ -10,7 +10,7 @@ Unofficial DyNet implementation of the paper Deep Recurrent Generative Decoder f
 - tqdm 4.15.0+
 
 ### 2. Prepare dataset
-To get preprocedded gigaword corpus, run
+To get preprocedded gigaword corpus[1], run
 ```
 sh download_data.sh
 ```
@@ -21,6 +21,7 @@ sh download_data.sh
 - `--n_epochs`: Number of epochs [default: `3`]
 - `--n_train`: Number of training data (up to `3803957`) [default: `3803957`]
 - `--n_valid`: Number of validation data (up to `189651`) [default: `189651`]
+- `--vocab_size`: Vocabulary size [default: `60000`]
 - `--batch_size`: Mini batch size [default: `32`]
 - `--emb_dim`: Embedding size [default: `256`]
 - `--hid_dim`: Hidden state size [default: `256`]
@@ -50,12 +51,44 @@ python train.py --n_epochs 10
 python test.py --beam_size 10
 ```
 
-### 5. Results
+### 5. Evaluate
+You can use pythonrouge[2] to measure the rouge scores.
+
+### 6. Results
+The model is trained with a full training data in [3].
+ROUGE scores are obtained with `pythonrouge`.
+##### 6.1. Gigaword (validation sets)
+My implementation used only 100 pairs (Original paper used all pairs in validation sets).
+|                 |ROUGE-1 (F1)|ROUGE-2 (F1)|ROUGE-L (F1)|
+|-----------------|:-----:|:-----:|:-----:|
+|Original paper [1]| 36.25|17.61|33.55|
+|My implementation| 45.95| 23.11| 42.84|
+
+##### 6.2. DUC 2004
 Work in progress.
 
+##### 6.3. LCSTS
+Work in progress.
+
+### 7. Pretained model
+To get the pretrained model, run
+```
+sh download_pretrained_model.sh
+```
+.
+
+This model is trained with
+```
+python train.py --n_epochs 10 --gpu 0 --alloc_mem 5200 --n_valid 1000 --vocab_size 60000
+```
+and stopped after epoch 8th, and I choose the model after the epoch 5th as the best one since it showed the lowest validation loss.
+
 ### Notes
+- ROUGE scores are very high compared to the original report, but I don't know why. Please tell me if you know why!
 - Original paper lacks some details and notations, and some points do not make sense, so this implementation may be different from the original one.
 - Tensorflow implementation is in the directory `./tensorflow`, but not maintained.
 
 ### References
-- [1]: P. Li et al. 2017. Deep Recurrent Generative Decoder for Abstractive Text Summarization. In Proceedings of EMNLP 2017 \[[pdf\]](https://arxiv.org/abs/1708.00625)
+- [1] P. Li et al. 2017. Deep Recurrent Generative Decoder for Abstractive Text Summarization. In Proceedings of EMNLP 2017 \[[pdf\]](https://arxiv.org/abs/1708.00625)
+- [2] pythonrouge: https://github.com/tagucci/pythonrouge
+- [3] Gigaword/DUC2004 Corpus: https://github.com/harvardnlp/sent-summary
