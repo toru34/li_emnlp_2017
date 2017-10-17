@@ -77,14 +77,8 @@ sh download_pretrained_model.sh
 ```
 .
 
-This model was trained with
-```
-python train.py --n_epochs 10 --gpu 0 --alloc_mem 5200 --n_valid 1000 --vocab_size 60000
-```
-and stopped after epoch 8th, and I choose the model after the epoch 5th as the best one since it showed the lowest validation loss.
-
 ### Notes
-<!-- - ROUGE scores are very high compared to the original report, but I don't know why. Please tell me if you know why! -->
+- ROUGE scores are much higher than what the paper reported, but I don't know why. Please tell me if you know why!
 - Original paper lacks some details and notations, and some points do not make sense, so this implementation may be different from the original one.
 - Tensorflow implementation is in the directory `./tensorflow`, but not maintained.
 
