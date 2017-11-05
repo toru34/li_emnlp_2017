@@ -13,6 +13,10 @@ tmp.py
 sumdata/*
 *.txt
 results
+download_lcsts_data.sh
+download_lcsts_pretrained_model.sh
+LCSTS
+preprocess_lcsts.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

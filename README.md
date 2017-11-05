@@ -12,7 +12,7 @@ Unofficial DyNet implementation of the paper Deep Recurrent Generative Decoder f
 ### 2. Prepare dataset
 To get preprocedded gigaword corpus[2], run
 ```
-sh download_data.sh
+sh download_gigaword_dataset.sh
 ```
 
 ### 3. Train
@@ -57,12 +57,10 @@ You can use pythonrouge[2] to measure the rouge scores.
 ### 6. Results
 The model is trained with a full training data in [3].
 ROUGE scores are obtained with `pythonrouge`.
-#### 6.1. Gigaword (validation sets)
-My implementation used only 101 pairs (Original paper used all pairs in validation sets).
-
+#### 6.1. Gigaword (validation data)
 |                 |ROUGE-1 (F1)|ROUGE-2 (F1)|ROUGE-L (F1)|
 |-----------------|:-----:|:-----:|:-----:|
-|My implementation| 47.88| 22.58| 43.57|
+|My implementation| 43.27|19.17|40.47|
 
 #### 6.2. DUC 2004
 Work in progress.
@@ -73,7 +71,7 @@ Work in progress.
 ### 7. Pretrained model
 To get the pretrained model, run
 ```
-sh download_pretrained_model.sh
+sh download_gigaword_pretrained_model.sh
 ```
 .
 
