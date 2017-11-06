@@ -17,7 +17,7 @@ download_lcsts_data.sh
 download_lcsts_pretrained_model.sh
 LCSTS
 preprocess_lcsts.py
-tensorflow
+tensorflow/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
