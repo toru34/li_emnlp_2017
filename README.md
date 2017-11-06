@@ -74,7 +74,7 @@ sh download_gigaword_pretrained_model.sh
 .
 
 ### Notes
-- ROUGE scores are much higher than what the paper reported, but I don't know why. Please tell me if you know why!
+- ROUGE scores are much higher than the ones the paper reported, but I don't know why. Please tell me if you know why!
 - Original paper lacks some details and notations, and some points do not make sense, so this implementation may be different from the original one.
 - Tensorflow implementation is in the directory `./tensorflow`, but not maintained.
 
