@@ -55,7 +55,7 @@ python test.py --beam_size 10
 You can use pythonrouge[2] to measure the rouge scores.
 
 ### 6. Results
-#### 6.1. Gigaword (validation data)
+#### 6.1. Gigaword (2000 validation data)
 |                 |ROUGE-1 (F1)|ROUGE-2 (F1)|ROUGE-L (F1)|
 |-----------------|:-----:|:-----:|:-----:|
 |My implementation| 43.27|19.17|40.47|
